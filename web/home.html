@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.html">
+    <link rel="stylesheet" href="validation.html">
+    <link rel="stylesheet" href="hi.js">
+    <title>Online Table Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: #e9ecef;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .search-form {
+            margin-top: 20px;
+        }
+
+        .search-form input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background: #218838;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to TableBooker</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Book Your Table Instantly!</h2>
+            <form class="search-form">
+                <input type="text" placeholder="Search for restaurants..." required>
+                <input type="date" required>
+                <input type="time" required>
+                <button type="submit">Find a Table</button>
+            </form>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We make dining out easier by allowing you to book your table online at your favorite restaurants.</p>
+        </section>
+
+        <section id="restaurants">
+            <h2>Featured Restaurants</h2>
+            <p>Discover the best dining options in your area.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TableBooker. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a></p>
+    </footer>
+</body>
+</html>

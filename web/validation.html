@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Hotel Table Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9bc8e6;
+            margin: 0;
+            padding: 20px;
+            background-image: url("d.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto; /* Center the container */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: black;
+            color: rgb(238, 233, 233);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 40%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Online Hotel Table Booking</h2>
+        <form id="bookingForm" action="submit_booking.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Your Number" pattern="[0-9]{10}">
+                <small>Format: 1234567890</small>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" name="people" max="4" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Book Table</button>
+            </div>
+            <p class="error" id="errorMessage">Please fill out all fields correctly.</p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const people = document.getElementById('people').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Reset the error message
+            errorMessage.style.display = 'none';
+
+            // Validate the inputs
+            if (!name || !email || !phone || !date || !time || !people) {
+                event.preventDefault(); // Prevent form submission
+                errorMessage.style.display = 'block'; // Show error message
+                return;
+            }
+
+            // Additional phone number validation
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                event.preventDefault();
+                errorMessage.textContent = "Please enter a valid 10-digit phone number.";
+                errorMessage.style.display = 'block';
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

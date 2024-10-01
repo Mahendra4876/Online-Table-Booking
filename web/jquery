@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results for Online Table Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .summary {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Test Results for Online Table Booking System</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Test Case</th>
+                <th>Result</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Retrieve Available Tables</td>
+                <td>Pass</td>
+                <td>Successfully retrieved available tables.</td>
+            </tr>
+            <tr>
+                <td>Book a Table (Table 1)</td>
+                <td>Pass</td>
+                <td>Table 1 status updated to 'reserved'.</td>
+            </tr>
+            <tr>
+                <td>Confirm Table Status After Booking</td>
+                <td>Pass</td>
+                <td>Confirmed Table 1 is now reserved.</td>
+            </tr>
+            <tr>
+                <td>Boundary Testing (1 and 20 seats)</td>
+                <td>Pass</td>
+                <td>Successfully created tables with edge seat cases.</td>
+            </tr>
+            <tr>
+                <td>Error Handling (Booking Reserved Table)</td>
+                <td>Pass</td>
+                <td>Correctly indicated Table 3 is unavailable.</td>
+            </tr>
+            <tr>
+                <td>Concurrency Testing (Multiple Bookings)</td>
+                <td>Fail</td>
+                <td>Some requests resulted in inconsistent states. Investigate further.</td>
+            </tr>
+            <tr>
+                <td>User Registration</td>
+                <td>Pass</td>
+                <td>New user registered successfully.</td>
+            </tr>
+            <tr>
+                <td>User Login</td>
+                <td>Pass</td>
+                <td>User logged in and received valid token.</td>
+            </tr>
+            <tr>
+                <td>Retrieve Bookings</td>
+                <td>Pass</td>
+                <td>Successfully retrieved all bookings.</td>
+            </tr>
+            <tr>
+                <td>Book Table with Invalid Data</td>
+                <td>Pass</td>
+                <td>Handled invalid data inputs gracefully.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <p>Total Tests Run: 10</p>
+        <p>Passed: 9</p>
+        <p>Failed: 1</p>
+        <p>Next Steps: Investigate concurrency issues identified during testing.</p>
+    </div>
+
+</body>
+</html>
